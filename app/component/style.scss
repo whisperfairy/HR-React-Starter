@@ -1,0 +1,86 @@
+//$percent: 40;
+$radius: 300px;
+$bdwidth: 20px;
+
+.container {
+  position: relative;
+  width: $radius+2*$bdwidth;
+  margin: auto;
+}
+
+.container:hover::before {
+  -webkit-transform: translateX(-$radius/2) scale(1.1);
+}
+
+@mixin shape {
+  display: block;
+  width: $radius;
+  height: $radius;
+  border-radius: $radius;
+  border: $bdwidth solid;
+}
+
+//.circle {
+//  @include shape;
+//  margin: 150px auto;
+//  border-color: orange orange grey grey;
+//  -webkit-transform: rotateZ(45deg);
+//  &::after {
+//    content: "";
+//    @include shape;
+//    @if $percent <= 50 {
+//      border-color: grey grey transparent transparent;
+//      -webkit-transform: translate(-$bdwidth, -$bdwidth) rotateZ($percent/100*360deg);
+//    }
+//    @if $percent > 50 {
+//      border-color: orange orange transparent transparent;
+//      -webkit-transform: translate(-$bdwidth, -$bdwidth) rotateZ(($percent - 50)/100*360deg);
+//    }
+//  }
+//}
+
+@for $i from 0 through 100 {
+  $circle: circle_+$i;
+  .#{$circle} {
+    @include shape;
+    margin: 150px auto;
+    border-color: orange orange grey grey;
+    -webkit-transform: rotateZ(45deg);
+    transition: -webkit-transform .7s ease-in-out;
+    &::before{
+      content: $i+"%";
+      display: block;
+      width: $radius;
+      height: $radius;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%,-50%) rotateZ(-45deg);
+      font-size: 110px;
+      font-family: "Lucida Sans";
+      color: grey;
+      text-align: center;
+      line-height: $radius;
+    }
+    &::after {
+      content: "";
+      @include shape;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @if $i <= 50 {
+        border-color: grey grey transparent transparent;
+        -webkit-transform: translate(-50%, -50%) rotateZ($i/100*360deg);
+      }
+      @if $i > 50 {
+        border-color: orange orange transparent transparent;
+        -webkit-transform: translate(-50%, -50%) rotateZ(($i - 50)/100*360deg);
+      }
+    }
+    &:hover {
+      -webkit-transform: rotateZ(45deg) scale(1.1);
+    }
+  }
+}
+
+

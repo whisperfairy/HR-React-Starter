@@ -1,0 +1,21 @@
+{
+  "presets": [["latest",{
+      "es2015": {
+        "modules": false
+      }
+    }],
+    "react"
+  ],
+  "plugins": [
+    [
+      "transform-runtime", "transform-decorators-legacy", "transform-class-properties", "react-hot-loader/babel",
+      "import",
+      [
+        {
+          "libraryName": "antd",
+          "style": "css"
+        }
+      ]
+    ]
+  ]
+}
