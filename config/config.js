@@ -14,6 +14,7 @@ var config = {
     "port": 3000,
     "dirname":path.join(__dirname,".."),
     'appDir':path.join(__dirname,'../app'),
+    'testDir':path.join(__dirname,'../test'),
     //模板所在的目录
     "webpackDir":path.join(__dirname,"../webpack"),
     "viewDir": path.join(__dirname, '..', 'views'),
