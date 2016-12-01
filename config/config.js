@@ -6,12 +6,13 @@
 var path = require('path');
 
 var config = {
-    "title": "极客学院爬虫系统",
+    "title": "HR-REACT_STARTER",
     //默认生产环境
     "env": "dev",
-    "appName": "HR-BASE-KOA2-WEBPACK",
+    "appName": "HR-REACT_STARTER",
     //端口号配置
     "port": 3000,
+    //项目根路径
     "dirname":path.join(__dirname,".."),
     'appDir':path.join(__dirname,'../app'),
     'testDir':path.join(__dirname,'../test'),

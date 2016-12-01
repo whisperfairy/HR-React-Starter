@@ -46,6 +46,9 @@ module.exports = merge(base, {
                         }
                     }
                 ]
+            },{
+                test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
+                loader: 'url-loader?limit=8192&name=assets/imgs/[name].[ext]'
             }
         ]
     },
