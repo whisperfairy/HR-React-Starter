@@ -7,16 +7,11 @@
     "react"
   ],
   "plugins": [
-    [
-      "transform-runtime","transform-object-rest-spread", "transform-decorators-legacy", "transform-class-properties", "react-hot-loader/babel",
-      "import",
-      [
-        {
-          "libraryName": "antd",
-          "libraryDirectory": "lib",
-          "style": true
-        }
-      ]
-    ]
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-runtime",
+    "async-to-promises",
+    "transform-flow-strip-types",
+    ["import",[{"libraryName": "antd" ,"style":false}]]
   ]
 }
