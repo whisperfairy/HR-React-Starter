@@ -1,5 +1,8 @@
 /**
- * Created by whisper on 2016/11/6.
+ * Created by hurong on 2016/12/8.
+ */
+/**
+ * Created by hurong on 2016/11/30.
  */
 'use strict'
 var path = require('path');
@@ -25,8 +28,8 @@ const autoprefixerBrowsers = [
 module.exports = merge(base, {
     devtool: "inline-source-map",
     output: {
-        filename: './dist/[name].js',
-        path: path.resolve(__dirname,'..'),
+        filename: './[name].js',
+        path: path.resolve(__dirname,'../dist'),
     },
     module: {
         rules: [
@@ -52,21 +55,22 @@ module.exports = merge(base, {
                 ]
             },{
                 test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
-                loader: 'url-loader?limit=1&name=dist/assets/imgs/[name].[ext]'
+                loader: 'url-loader?limit=1&name=assets/imgs/[name].[ext]'
             }
         ]
     },
     plugins:[
-        new webpack.HotModuleReplacementPlugin(),
-        //activates HMR
-        new webpack.NamedModulesPlugin(),
-        //prints more readanpmble module names in the browser console on HMR updates
+        // new webpack.HotModuleReplacementPlugin(),
+        // //activates HMR
+        // new webpack.NamedModulesPlugin(),
+        //prints more readable module names in the browser console on HMR updates
         // new ExtractTextPlugin({filename:path.join(config.dirname,'dist','bundle.css'), allChunks: true})
+        new webpack.optimize.UglifyJsPlugin(), //最小化一切
+        new webpack.optimize.AggressiveMergingPlugin()//合并块
     ],
     devServer:{
         publicPath:'/',//bundle输出的伪路径相对于html
         inline:true,
-        lazy:false,
         historyApiFallback: true,
         contentBase: config.dirname,
         //watchContentBase:'true',//是否监听ContentBase下的文件结构变化，默认为false，只监听现有文件变化，新增不监听，耗内存打慎用
@@ -76,4 +80,3 @@ module.exports = merge(base, {
         }
     }
 })
-
