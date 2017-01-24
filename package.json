@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "devserver": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./webpack/dev.js",
-    "build":"webpack --config ./webpack/build.js",
+    "build": "webpack --config ./webpack/build.js",
     "test": "karma start karma.conf.js --watch"
   },
   "devDependencies": {
@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "antd": "^2.0.1",
+    "d3": "^4.4.0",
     "es6-shim": "^0.35.1",
     "immutable": "^3.8.1",
     "koa": "next",

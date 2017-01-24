@@ -6,7 +6,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './container/App.jsx'
 import './asset/styles/style.scss'
-
+import 'antd/dist/antd.css'
 ReactDOM.render(
     <App></App>,
     document.querySelector('.app')

@@ -3,6 +3,7 @@
  */
 'use strict'
 import React, {PureComponent} from 'react'
+import GCanvas from '../component/canvasComponent/GCanvas.jsx'
 import Header from './header/Header.jsx'
 class App extends PureComponent {
     constructor(props) {
@@ -43,7 +44,7 @@ class App extends PureComponent {
         console.log('App' + 'rendering');
         return (
             <div>
-                <Header></Header>
+                <GCanvas></GCanvas>
             </div>
         )
     }

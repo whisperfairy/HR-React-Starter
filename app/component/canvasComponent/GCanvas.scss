@@ -1,0 +1,51 @@
+/**
+ *
+ * GCanvas.scss 文件作用
+ * @author hurong<353486474@QQ.COM>
+ * @date 2016/12/21
+ *
+ * @内容 作用
+ * @内容 作用 
+ */
+.g2_container{
+  width: 100%;
+  svg{
+    width:1000px;
+    height: 1000px;
+    padding: 10px;
+    background-color: greenyellow;
+    .node circle {
+      fill: #999;
+    }
+     g {
+       width:100%;
+       height: 100%;
+       background-color: aqua;
+     }
+    .g_rect_node_text_title {
+      font-size: 22px;
+      fill: white;
+      text-anchor: start;
+    }
+    .g_rect_node_text_mod, .g_rect_node_text_del {
+      font-size: 22px;
+      fill: white;
+      text-anchor: end;
+    }
+    .node text {
+      font: 10px sans-serif;
+    }
+    .node--internal circle {
+      fill: #555;
+    }
+    .node--internal text {
+      text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+    }
+    .link {
+      fill: none;
+      stroke: #555;
+      stroke-opacity: 1;
+      stroke-width: 1.5px;
+    }
+  }
+}
