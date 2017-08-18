@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "eslint": "^3.19.0",
+    "eslint": "^4.4.1",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-react": "^6.10.3",
     "autoprefixer": "^6.5.1",
