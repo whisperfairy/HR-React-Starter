@@ -30,7 +30,7 @@
         "no-catch-shadow": 2,//禁止catch子句参数与外部作用域变量同名
         "no-class-assign": 2,//禁止给类赋值
         "no-cond-assign": 2,//禁止在条件表达式中使用赋值语句
-        "no-console":2,//禁止使用console
+        "no-console":0,//禁止使用console
         "no-const-assign": 2,//禁止修改const声明的变量
         "no-constant-condition": 2,//禁止在条件中使用常量表达式 if(true) if(1)
         "no-continue": 0,//禁止使用continue
@@ -116,7 +116,7 @@
         "no-unneeded-ternary": 2,//禁止不必要的嵌套 var isYes = answer === 1 ? true : false;
         "no-unreachable": 2,//不能有无法执行的代码
         "no-unused-expressions": 2,//禁止无用的表达式
-        "no-unused-vars": [0, {"vars": "all", "args": "after-used"}],//不能有声明后未被使用的变量或参数
+        "no-unused-vars": [2, {"vars": "all", "args": "after-used"}],//不能有声明后未被使用的变量或参数
         "no-use-before-define": 2,//未定义前不能使用
         "no-useless-call": 2,//禁止不必要的call和apply
         "no-void": 2,//禁用void操作符
