@@ -5,3 +5,4 @@
 /dist/*
 !/dist/electronEntry.js
 !/dist/nwEntry.html
+yarn.lock
