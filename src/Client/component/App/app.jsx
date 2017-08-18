@@ -8,10 +8,13 @@
  * @内容 作用
  */
 import React from 'react';
-const app = ({}) => {
-    return <div>
-        app
-    </div>;
-};
+class app extends React.PureComponent{
+    constructor(){
+        super();
+    }
+    render(){
+        return <div>123</div>;
+    }
+}
 
 export default app;

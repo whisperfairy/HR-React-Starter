@@ -14,6 +14,6 @@
     "transform-runtime",
     "async-to-promises",
     "transform-flow-strip-types",
-    ["import",{"libraryName": "antd" ,"style":'css'}]
+    ["import",{"libraryName": "antd" ,"style":"css"}]
   ]
 }

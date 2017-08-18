@@ -113,9 +113,12 @@ const DEV_Config=merge(baseConfig, {
     module: {
         rules: [
             {
-                enforce:"pre",
-                test:/\.js[x]?$/,
-                loader:"eslint-loader"
+                enforce: "pre",
+                test: /\.js[x]?$/,
+                include:config.appDir,
+                exclude: /node_modules/,
+                options:{fix:true},
+                loader: "eslint-loader"
             },
             {
                 enforce: "pre",
