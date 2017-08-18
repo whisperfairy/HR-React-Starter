@@ -8,48 +8,49 @@
  * @内容 作用
  */
 //config
-const {Environment: EnumEnv, config} = require('../config/config');
-const {Entrys} = require('./Entrys.config');
+const {Environment:EnumEnv,config} = require('../config/config');
+const {Entrys}=require('./Entrys.config');
 //lib
 var path = require('path');
 var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var precss = require('precss');
+var autoprefixer =require('autoprefixer');
+var precss =require('precss');
 var merge = require('webpack-merge')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var ExtractTextPlugin =require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 var baseConfig = {
     target: 'web',
-    context: path.join(__dirname, '..'),
+    context:path.join(__dirname,'..'),
     entry: Entrys,
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".webpack.js", ".web.js", ".jsx", ".js"]
+        extensions: [".webpack.js", ".web.js",  ".jsx", ".js"]
     },
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, '../dist')
     },
-    module: {
-        rules: [ {
-            test: /\.js[x]?$/,
-            loaders: [
-                "babel-loader"
-            ],
-            exclude: path.resolve(config.dirname, 'node_modules'),
-            include: path.resolve(config.dirname, "src"),
-        },
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+    module:{
+        rules:[   {
 
+        },{
+                test: /\.js[x]?$/,
+                loaders: [
+                    "babel-loader"
+                ],
+                exclude: path.resolve(config.dirname, 'node_modules'),
+                include: path.resolve(config.dirname, "src"),
+            },
+            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             {
-                test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
-                loader: 'url-loader?limit=1&name=/assets/imgs/[name].[ext]'
-            }
+            test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
+            loader: 'url-loader?limit=1&name=/assets/imgs/[name].[ext]'
+        }
         ]
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['vendor', 'manifest'],
+            name: ['vendor', 'manifest'] ,
             minChunks: Infinity
         }),
         new webpack.optimize.ModuleConcatenationPlugin()
@@ -109,16 +110,20 @@ const DEV_Config = merge(baseConfig, {
         path: path.resolve(__dirname, '..'),
     },
     module: {
-        rules: [{
-            enforce: "pre",
-            test: /\.js[x]?$/,
-            exclude: /node_modules/,
-            loader: "eslint-loader",
-        },{
-            enforce: "pre",
-            test: /\.js[x]?$/,
-            loader: "source-map-loader"
-        },
+        rules: [
+            {
+                enforce: "pre",
+                test: /\.js[x]?$/,
+                include:config.appDir,
+                exclude: /node_modules/,
+                options:{fix:true},
+                loader: "eslint-loader"
+            },
+            {
+                enforce: "pre",
+                test: /\.js[x]?$/,
+                loader: "source-map-loader"
+            },
             {
                 test: /\.s?css$/,
                 use: [
