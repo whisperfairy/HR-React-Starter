@@ -1,14 +1,16 @@
 {
   "name": "React_TS_Webpack",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./dist/electronEntry.js",
   "license": "MIT",
   "scripts": {
 
     "devserver": "./node_modules/.bin/better-npm-run devserver",
     "build": "npm run clean && ./node_modules/.bin/better-npm-run build",
     "clean": "./node_modules/.bin/rimraf ./dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nw": "./node_modules/.bin/electron .",
+    "nwbuild": "electron-packager ./dist helloElectron --platform=darwin --arch=x64 --out ./OutApp  --overwrite "
   },
   "betterScripts": {
     "devserver": {
@@ -25,10 +27,13 @@
     }
   },
   "devDependencies": {
+
+    "electron": "^1.6.7",
     "babel-eslint": "^7.2.3",
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-react": "^6.10.3",
+    "electron-packager": "^8.7.0",
     "autoprefixer": "^6.5.1",
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
