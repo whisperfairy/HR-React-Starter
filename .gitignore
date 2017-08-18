@@ -1,0 +1,7 @@
+#electron git ignore
+/node_modules/
+.DS_Store
+/.idea/*
+/dist/*
+!/dist/electronEntry.js
+!/dist/nwEntry.html
