@@ -7,3 +7,10 @@
  * @内容 作用
  * @内容 作用 
  */
+@font-face  {
+  font-family: 'anticon';
+  src: url('../../asset/font/ant-font/font_r5u29ls31bgldi.woff') ;
+  /* IE9*/
+  src: url('../../asset/font/ant-font/font_r5u29ls31bgldi.woff') format('woff'), /* chrome、firefox */ url('/asset/font/font_r5u29ls31bgldi.ttf') format('truetype')/* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ ;
+  /* iOS 4.1- */
+}
